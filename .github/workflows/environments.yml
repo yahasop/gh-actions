@@ -12,7 +12,12 @@ jobs:
   # This workflow contains a single job called "build"
   job_1:
 
-    environment: dev
+    environment: qa
+
+    env:
+      NAME: ${{ vars.NAME }}
+      COLOR: ${{ vars.COLOR }}
+      EMAIL: ${{ vars.EMAIL }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
