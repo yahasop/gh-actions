@@ -1,0 +1,32 @@
+
+name: variables
+
+# Triggers for the workflow
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - ".github/workflows/variables.yaml"
+      - "test.py"
+
+  # Allows to run the workflow manually
+  workflow_dispatch:
+
+env:
+  NAME: ${{ vars.NAME}}
+  EMAIL: ${{ secrets.USER_EMAIL }}
+
+jobs:
+  # Named job "build"
+  build:
+    
+    runs-on: ubuntu-latest  # Github-managed runner
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      
+      # Runs a single command using the runners shell
+      - name: Display information
+        run: python3 test.py $NAME $EMAIL
