@@ -30,4 +30,4 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: List variables
-        run: echo "$NAME and $COLOR and $EMAIL"
+        run: echo "${NAME} and ${COLOR} and ${EMAIL}"
