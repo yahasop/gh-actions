@@ -1,0 +1,28 @@
+
+name: test-python-script
+
+on:
+
+  push:
+    branches: 
+      - "dev"
+    paths:
+      - ".github/workflows/test-python-script.yml"
+      - "./main.py"
+
+  # Allows to run the workflow manually
+  workflow_dispatch:
+
+jobs:
+  # Named job "test-python"
+  test-python:
+  
+    runs-on: ubuntu-latest #Github-managed runner
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      
+      # Runs a single command using the runners shell
+      - name: Test Python script
+        run: python3 main.py John john@mail.com
