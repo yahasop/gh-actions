@@ -5,8 +5,8 @@ parser = argparse.ArgumentParser(description='Program to print two values') #Par
 parser.add_argument('name', help='Write name')
 parser.add_argument('email', help='Write email')
 
-args = parser.parse_args() #Store the argument in a variable
+args = parser.parse_args() #Store the parsed arguments in a variable
 
-#Using a try and except bloc this tries to check if the file provided has an extension
+# Print the values
 print(f"The name is: {args.name}")
 print(f"The email is: {args.email}")
