@@ -8,6 +8,7 @@ on:
   push:
     branches: 
       - "dev"
+      - "main"
   pull_request:
     branches: 
       - "main"
@@ -17,6 +18,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  - NAME: John
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -31,4 +34,4 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python3 main.py John john@mail.com
+        run: python3 test.py $NAME ${{ secrets.USER_EMAIL }}
