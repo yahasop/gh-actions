@@ -7,7 +7,7 @@ on:
     branches:
       - "main"
     paths:
-      - ".github/workflows/variables.yaml"
+      - ".github/workflows/variables.yml"
       - "test.py"
 
   # Allows to run the workflow manually
