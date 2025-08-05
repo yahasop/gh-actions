@@ -1,35 +1,27 @@
-# This is a basic workflow to help you get started with Actions
 
 name: environments
 
-# Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch: # Allows to run the workflow manually
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  job_1:
-
+  
+  job_1: # Named job "job_1"
     environment: dev
-
+    
     env:
       NAME: ${{ vars.NAME }}
       COLOR: ${{ vars.COLOR }}
       EMAIL: ${{ secrets.EMAIL }}
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+    
     steps:
       
-      # Runs a single command using the runners shell
-      - name: List variables
-        run: echo "${NAME} and ${COLOR} and ${EMAIL}"
+      - name: Display variables
+        run: echo "The name is ${NAME}, color is ${COLOR} and email ${EMAIL}"
 
-
-  job_2:
+  job_2: # Named job "job_2" 
 
     environment: qa
 
@@ -37,12 +29,9 @@ jobs:
       NAME: ${{ vars.NAME }}
       COLOR: ${{ vars.COLOR }}
       EMAIL: ${{ secrets.EMAIL }}
-    # The type of runner that the job will run on
+  
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      
-      # Runs a single command using the runners shell
-      - name: List variables
-        run: echo "${NAME} and ${COLOR} and ${EMAIL}"
+      - name: Display variables
+        run: echo "The name is ${NAME}, color is ${COLOR} and email ${EMAIL}"
