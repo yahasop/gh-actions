@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: Display date and time
-        run: date +"%A %B %d %Y"
+        run: date +"Today is %A, %B %d, %Y at %I:%M:%S %p"
