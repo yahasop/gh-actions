@@ -1,0 +1,18 @@
+
+name: cron-job
+
+on:
+  schedule:
+    - cron: "0 10 * * 3"
+
+  workflow_dispatch:
+
+jobs:
+
+  date_and_time:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display date and time
+        run: date +"%A %B %d %Y"
